@@ -20,8 +20,6 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-
-
     function sendInvitation(Request $req){
 
         try{
@@ -76,7 +74,6 @@ class UserController extends Controller
     
     function registerUser(Request $req, $email){
 
-        
         try{
             // Check if Link is valid
             $email = Crypt::decrypt($email);
@@ -256,62 +253,5 @@ class UserController extends Controller
 
         return true;
     }
-
-
-
-
-
-
-
-
-
-
-    // public function index(){
-    //     $users = User::all();
-    //     return response($users);
-    // }
-
-
-    // public function inviteUser(Request $req, $email){
-        
-    //     return Crypt::decrypt($email);
-
-    //     $rules = array(
-    //         'email' => 'required|unique:users'
-    //     );
-        
-    //     $validator = Validator::make($req->all(), $rules);
-    //     if($validator->fails()){
-    //         return $validator->errors();
-    //     }
-    // }
-
-    //  public function register_user(UserRequest $request){
-    //      return "AAAAAAA";
-    //      try {
-
-    //         $rules = array(
-    //             'username' => 'required|unique:users',
-    //             'password' => 'required'
-    //         );
-
-    //         $validator = Validator::make($request->all(), $rules);
-    //         if($validator->fails()){
-    //             return $validator->errors();
-    //         }
-
-    //         $pin = random_int(100000, 999999);
-    //         $email = Crypt::decrypt();
-    //         $user = User::find(10);
-    //         $user->user_name = $request->username;
-    //         $user->password = $request->password;
-    //         $user->pin = $pin;
-    //         $user->save();
-
-    //     } catch (\Exception $e) {
-    //         return $e->getMessage();
-    //     }
-    //  }
-
 
 }
